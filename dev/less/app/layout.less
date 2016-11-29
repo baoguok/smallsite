@@ -1,0 +1,34 @@
+/* 初始化默认设置 */
+body{background-color:#f4f4f4;width:100%;color:#333}
+select,input{vertical-align:middle}
+fieldset,img{border:0 none}
+table{margin:0;border-collapse:collapse;border-spacing:0}
+button[disabled], html input[disabled] {cursor:default}
+a{
+	color:#333;
+	&:hover{
+		color:#f60
+	}
+}
+
+/* 布局  */
+.lt-block{
+	background:#fff;
+}
+
+/* 判断是不是IOS */ 
+.isios{
+    display: none;
+    text-align: center;
+    .rem(font-size,20);
+    .rem(padding,10,0);
+    color: #ccc;
+}
+
+/* 加载更多内容 */
+
+.all{
+    text-align: center;
+    .rem(line-height,70);
+    color: #999;
+} 
