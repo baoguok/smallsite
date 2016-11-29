@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="zh-lang">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>鼓浪屿风景区</title>
+    <link rel="stylesheet" type="text/css" href="/smallsite/dest/css/styles.css?v=222" media="all"/>
+    <script src="/smallsite/dest/js/all.js"></script>
+    <script src="/smallsite/dest/js/swiper.min.js"></script>
+</head>
+<body class="page-home">
+    <!-- page-home -->
+    <div class="header">
+        <h1><img src="/smallsite/dest/img/logo.jpg" width="100%" height="100%"></h1>
+        <div class="weather">微风</div>
+    </div>
+    <div class="notice">
+        <i class="icon-notice"></i>
+        <span>景区公告：截止目前为止，景区在园人数为50000人。</span>
+    </div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/smallsite/dest/img/slide1.jpg" width="100%" height="100%"></div>
+            <div class="swiper-slide"><img src="/smallsite/dest/img/slide2.jpg" width="100%" height="100%"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#"><i class="icon-sence"></i>景区介绍</a></li>
+        <li>线路攻略</li>
+        <li>交通住宿</li>
+        <li>美食特产</li>
+    </ul>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+</body>
+</html>
