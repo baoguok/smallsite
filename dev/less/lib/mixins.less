@@ -69,6 +69,23 @@
 .opacity(@opacity){
   opacity: @opacity;
 }
+.display-flex(){
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  	display: -ms-flexbox;      /* TWEENER - IE 10 */
+  	display: -webkit-flex;     /* NEW - Chrome */
+  	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.justify-content(@v){
+	-webkit-justify-content:@v;
+	justify-content:@v;
+}
+.align-items(@v){
+   -webkit-box-align: @v;
+   -ms-flex-align: @v;
+   -webkit-align-items: @v;
+   align-items: @v;
+}
 
 /* scale */
 
@@ -98,7 +115,7 @@
 }
 
 .rem (@property, @value:default, @value2:default, @value3:default, @value4:default) {
-	@diff: 640/16;
+	@diff: 750/16;
 	
 	.mixin (@value, @value2, @value3, @value4) when ( isnumber(@value) ) {
 		@px-fallback: @value / @diff;

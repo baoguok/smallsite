@@ -130,7 +130,7 @@ gulp.task('sprite:png', ['clean:imagesSprite'], function () {
 			.pipe(gulp.dest(path.dev+'less/core/'));
 });
 
-//合并jpg
+//合并jpgy
 gulp.task('sprite:jpg', ['clean:imagesSprite'], function () {
 	var spriteData = gulp
 						.src(path.dev+'sprite/*.jpg')

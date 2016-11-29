@@ -1,3 +1,35 @@
-.page-about{
-    // 
+.page-home{
+    .header{
+        .display-flex();
+        .justify-content(space-between);
+        .rem(height,80);
+        .rem(line-height,80);
+        background-color: #eaeaea;
+        h1{
+            .rem(width,180);
+            .rem(height,50);
+            .rem(margin-top,15);
+            .rem(padding-left,30);
+        }
+    }
+    .weather{
+        .rem(padding-right,30);
+        color: #333333;
+        .rem(font-size,22);
+    }
+    .notice{
+        .rem(height,50);
+        .rem(line-height,50);
+        background-color: #104a60;
+        color: #fff;
+        .rem(font-size,22);
+        .rem(padding,0,30);
+        span{.rem(margin-left,10);}
+    }
+    .menu{
+        .display-flex();
+        .justify-content(space-around);
+        .align-items(stretch);
+        .rem(height,180);
+    }
 }
