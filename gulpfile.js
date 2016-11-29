@@ -38,10 +38,18 @@ gulp.task('clean:css', function() {
 		.pipe(clean({force: true}));
 });
 
-gulp.task('clean:js', function() {
+gulp.task('clean:jsMerge', function() {
 	gulp
 		.src([
-			path.dest+'js/**/*'
+			path.dest+'js/merge/**/*'
+		], {read: false})
+		.pipe(clean({force: true}));
+});
+
+gulp.task('clean:jsDefault', function() {
+	gulp
+		.src([
+			path.dest+'js/default/**/*'
 		], {read: false})
 		.pipe(clean({force: true}));
 });
@@ -65,11 +73,11 @@ gulp.task('clean:imagesSprite', function() {
 
 
 //复制文件
-gulp.task('copy', ['clean', 'copy:js', 'copy:images']);
+gulp.task('copy', ['clean', 'copy:jsMerge', 'copy:jsDefault', 'copy:images']);
 
-gulp.task('copy:js', function(){
+gulp.task('copy:jsMerge', function(){
 	gulp
-		.src(path.dev+'js/**.js')
+		.src(path.dev+'js/merge/**.js')
 		.pipe(plumber(function(error){
 			console.log(error);
 			console.log('--------------------------  js Syntax Error! --------------------------');
@@ -78,6 +86,17 @@ gulp.task('copy:js', function(){
 		.pipe(uglify())
 		.pipe(gulp.dest(path.dest+'js/'));
 });
+
+gulp.task('copy:jsDefault',function(){
+    gulp
+		.src(path.dev+'js/default/**.js')
+		.pipe(plumber(function(error){
+			console.log(error);
+			console.log('--------------------------  js Syntax Error! --------------------------');
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.dest+'js/'));
+})
 
 gulp.task('copy:images', function(){
 	gulp
@@ -141,7 +160,8 @@ gulp.task('default', ['clean', 'copy', 'sprite'], function(){
 	gulp.watch(path.dev+'img/sprite/*.png', ['sprite:png']);
 	
 	//监听js
-	gulp.watch(path.dev+'js/**.js', ['copy:js']);
+	gulp.watch(path.dev+'js/merge/**.js', ['copy:jsMerge']);
+	gulp.watch(path.dev+'js/default/**.js', ['copy:jsDefault']);
 
     //监听less
     gulp.watch(path.dev+'less/**/*.*', ['less']);
