@@ -1,7 +1,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 47, 26);
+	.rem(background-size, 243, 186);
 }
 .icon-arrow(@isHover: false){
 
@@ -12,7 +12,7 @@
 	}
 	.hover(@isHover);
 	
-	.rem(background-position, 0, 0);
+	.rem(background-position, -196, 0);
 }
 
 [class^="icon-"],
@@ -20,7 +20,7 @@
 	.iconSprite();
 }
 .icon-arrow{
-	.rem(background-position, 0, 0);
+	.rem(background-position, -196, 0);
 	.rem(width, 17);
 	.rem(height, 26);
 }
@@ -28,7 +28,61 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 47, 26);
+	.rem(background-size, 243, 186);
+}
+.icon-food(@isHover: false){
+
+	.hover (@a) when (@a = false) {
+		.iconSprite();
+		.rem(width, 88);
+		.rem(height, 88);
+	}
+	.hover(@isHover);
+	
+	.rem(background-position, 0, 0);
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+	.iconSprite();
+}
+.icon-food{
+	.rem(background-position, 0, 0);
+	.rem(width, 88);
+	.rem(height, 88);
+}
+
+
+.iconSprite(){
+	background-image: url(../img/sprite.png);
+	.rem(background-size, 243, 186);
+}
+.icon-line(@isHover: false){
+
+	.hover (@a) when (@a = false) {
+		.iconSprite();
+		.rem(width, 88);
+		.rem(height, 88);
+	}
+	.hover(@isHover);
+	
+	.rem(background-position, -98, 0);
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+	.iconSprite();
+}
+.icon-line{
+	.rem(background-position, -98, 0);
+	.rem(width, 88);
+	.rem(height, 88);
+}
+
+
+.iconSprite(){
+	background-image: url(../img/sprite.png);
+	.rem(background-size, 243, 186);
 }
 .icon-notice(@isHover: false){
 
@@ -39,7 +93,7 @@
 	}
 	.hover(@isHover);
 	
-	.rem(background-position, -27, 0);
+	.rem(background-position, -223, 0);
 }
 
 [class^="icon-"],
@@ -47,8 +101,62 @@
 	.iconSprite();
 }
 .icon-notice{
-	.rem(background-position, -27, 0);
+	.rem(background-position, -223, 0);
 	.rem(width, 20);
 	.rem(height, 20);
+}
+
+
+.iconSprite(){
+	background-image: url(../img/sprite.png);
+	.rem(background-size, 243, 186);
+}
+.icon-sence(@isHover: false){
+
+	.hover (@a) when (@a = false) {
+		.iconSprite();
+		.rem(width, 88);
+		.rem(height, 88);
+	}
+	.hover(@isHover);
+	
+	.rem(background-position, 0, -98);
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+	.iconSprite();
+}
+.icon-sence{
+	.rem(background-position, 0, -98);
+	.rem(width, 88);
+	.rem(height, 88);
+}
+
+
+.iconSprite(){
+	background-image: url(../img/sprite.png);
+	.rem(background-size, 243, 186);
+}
+.icon-traffic(@isHover: false){
+
+	.hover (@a) when (@a = false) {
+		.iconSprite();
+		.rem(width, 88);
+		.rem(height, 88);
+	}
+	.hover(@isHover);
+	
+	.rem(background-position, -98, -98);
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+	.iconSprite();
+}
+.icon-traffic{
+	.rem(background-position, -98, -98);
+	.rem(width, 88);
+	.rem(height, 88);
 }
 
