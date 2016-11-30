@@ -1,0 +1,38 @@
+.page-details{
+	.details-img{
+		img{
+            width: 100%;
+            .rem(heigh,500);
+		}
+	}
+	.details-title{
+		.rem(padding,12,30);
+		border-bottom:1px solid #e5e5e5;
+		h1{
+			color:#333;
+			.rem(font-size,32);
+			.rem(line-height,48);
+		}
+		p{
+			.display-flex();
+	        .justify-content(space-between);
+		}
+		span{
+			.rem(line-height,60);
+			.rem(font-size,24);
+			color:#999;
+		}
+		label{
+			.rem(padding-right,40);
+		}
+		.icon-view{
+			.rem(margin-right,10);
+		}
+	}
+	.details-content{
+		.rem(padding,20,30);
+		p{
+			text-indent:1rem;
+		}
+	}
+}

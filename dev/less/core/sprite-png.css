@@ -1,7 +1,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-arrow(@isHover: false){
 
@@ -12,7 +12,7 @@
 	}
 	.hover(@isHover);
 	
-	.rem(background-position, -208, 0);
+	.rem(background-position, -208, -30);
 }
 
 [class^="icon-"],
@@ -20,7 +20,7 @@
 	.iconSprite();
 }
 .icon-arrow{
-	.rem(background-position, -208, 0);
+	.rem(background-position, -208, -30);
 	.rem(width, 17);
 	.rem(height, 26);
 }
@@ -28,7 +28,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-food(@isHover: false){
 
@@ -55,7 +55,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-line(@isHover: false){
 
@@ -82,7 +82,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-notice(@isHover: false){
 
@@ -93,7 +93,7 @@
 	}
 	.hover(@isHover);
 	
-	.rem(background-position, -235, 0);
+	.rem(background-position, -208, -66);
 }
 
 [class^="icon-"],
@@ -101,7 +101,7 @@
 	.iconSprite();
 }
 .icon-notice{
-	.rem(background-position, -235, 0);
+	.rem(background-position, -208, -66);
 	.rem(width, 20);
 	.rem(height, 20);
 }
@@ -109,7 +109,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-sence(@isHover: false){
 
@@ -136,7 +136,7 @@
 
 .iconSprite(){
 	background-image: url(../img/sprite.png);
-	.rem(background-size, 255, 198);
+	.rem(background-size, 244, 198);
 }
 .icon-traffic(@isHover: false){
 
@@ -158,5 +158,32 @@
 	.rem(background-position, -104, -104);
 	.rem(width, 94);
 	.rem(height, 94);
+}
+
+
+.iconSprite(){
+	background-image: url(../img/sprite.png);
+	.rem(background-size, 244, 198);
+}
+.icon-view(@isHover: false){
+
+	.hover (@a) when (@a = false) {
+		.iconSprite();
+		.rem(width, 36);
+		.rem(height, 20);
+	}
+	.hover(@isHover);
+	
+	.rem(background-position, -208, 0);
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+	.iconSprite();
+}
+.icon-view{
+	.rem(background-position, -208, 0);
+	.rem(width, 36);
+	.rem(height, 20);
 }
 

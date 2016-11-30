@@ -129,21 +129,19 @@
 
             &:nth-child(odd){
                 a{
-                    .display-flex();
                     .rem(margin-right,10);
-                    .flex-direction(column);
                 }
             }
 
             &:nth-child(even){
                 a{
-                    .display-flex();
-                    .flex-direction(column);
                     .rem(margin-left,10);
                 }
             }
 
             a{
+                .display-flex();
+                .flex-direction(column);
                 .rem(margin-bottom,20);
                 cursor: pointer;
                 img{
