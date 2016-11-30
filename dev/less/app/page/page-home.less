@@ -1,7 +1,8 @@
 .page-home{
     .header{
-        .display-flex();
-        .justify-content(space-between);
+        display: flex;
+        justify-content:space-between;
+
         .rem(height,80);
         .rem(line-height,80);
         background-color: #eaeaea;
@@ -30,41 +31,54 @@
         span{.rem(margin-left,10);}
     }
     .menu{
-        .display-flex();
-        .justify-content(space-around);
-        .align-items(stretch);
+        display:flex;
+        justify-content:space-around;
+        align-items:stretch;
+
         .rem(height,180);
         .rem(margin-top,10);
         .rem(margin-bottom,40);
         li{
             a{
                 .rem(height,180);
-                .display-flex();
-                .flex-direction(column);
-                .justify-content(space-around);
-                .align-items(center);
+
+                display: flex;
+                flex-direction:column;
+                justify-content:space-around;
+                align-items:center;
+
                 .rem(font-size,26);
                 color: #000;
             }
         }
     }
     .pic-menu{
-        .rem(height,355);
-        .display-flex();
-        .justify-content(space-between);
+        width: 100%;
+        .rem(height,375);
+
+        display:flex;
+
+        justify-content:space-between;
+
         label{
-            .rem(height,340);
+            .rem(height,375);
+            width: 50%;
+            display:flex;
+            flex-direction:column;
             a{
-                .display-flex();
-                .flex-direction(column);
+                display:block;
                 .rem(height,105);
                 .rem(margin-bottom,20);
                 position: relative;
                 img{
+                    display: block;
                     .border-radius(5);
                 }
                 span{
+                    display: block;
                     width: 100%;
+
+                    .rem(height,105);
                     .rem(line-height,105);
                     position: absolute;
                     top: 0;
@@ -76,20 +90,23 @@
             }
         }
         .pic-menu-left{
-            .rem(margin-left,30);
-            .rem(margin-right,10);
             a{
+                .rem(margin-left,30);
+                .rem(margin-right,10);
                 &:first-child{
-                    .rem(height,230);
+                    .rem(height,230) !important;
                     span{
-                        .rem(line-height,230);
+                        .rem(height,230);
+                        .rem(line-height,230) !important;
                     }
                 }
             }
         }
         .pic-menu-right{
-            .rem(margin-right,30);
-            .rem(margin-left,10);
+            a{
+                .rem(margin-right,30);
+                .rem(margin-left,10);
+            }      
         }
     }
     .hot{
@@ -120,34 +137,45 @@
         }
     }
     .hot-list{
-        .rem(margin,30);
-        .display-flex();
-        .justify-content(space-around);
-        .flex-wrap(wrap);
+        .rem(margin,30,40);
+
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+
         li{
+            display:flex;
             width: 50%;
+            height: auto;
 
             &:nth-child(odd){
                 a{
                     .rem(margin-right,10);
+                    .rem(margin-left,-10);
+
                 }
             }
 
             &:nth-child(even){
                 a{
                     .rem(margin-left,10);
+                    .rem(margin-right,-10);
                 }
             }
 
             a{
-                .display-flex();
-                .flex-direction(column);
+                width: 100%;
+                display:flex;
+                flex-direction:column;
+
                 .rem(margin-bottom,20);
                 cursor: pointer;
                 img{
+                    display: block;
                     .border-radius(4);
                 }
                 span{
+                    display: block;
                     text-align: center;
                     .rem(font-size,26);
                     color: #000;

@@ -4,6 +4,9 @@ var gulp        = require('gulp'),
 	minifycss   = require('gulp-minify-css'),
 	sprite      = require('gulp.spritesmith'),
 	// imagemin    = require('gulp-imagemin'),
+	postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+
 	clean       = require('gulp-clean'),
 	plumber     = require('gulp-plumber'),
 	concat      = require('gulp-concat'),
@@ -24,6 +27,9 @@ gulp.task('less', function () {
 		}))
 		.pipe(less())
 		.pipe(minifycss())
+		.pipe(postcss([ autoprefixer({ browsers: [
+			'last 20 versions'
+		] }) ]))
         .pipe(gulp.dest(path.dest+'css'));
 });
 

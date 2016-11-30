@@ -16,6 +16,8 @@
     "gulp-uglify": "*",              
     "gulp.spritesmith": "*",         
   	"gulp-cache":  "*",              
-  	"gulp-imagemin":  "*"            
+  	"gulp-imagemin":  "*" ,
+    "gulp-postcss":"*",
+    "autoprefixer":"*"        
   }
 }
