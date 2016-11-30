@@ -8,6 +8,13 @@
     <link rel="stylesheet" type="text/css" href="/smallsite/dest/css/styles.css?v=222" media="all"/>
     <script src="/smallsite/dest/js/all.js"></script>
     <script src="/smallsite/dest/js/swiper.min.js"></script>
+
+    <script src="/smallsite/dest/js/jquery.min.js"></script>
+
+    <!-- （必选）加载 Mock -->
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script src="/smallsite/data/mockData.js"></script>
+
 </head>
 <body class="page-list">
    <div class="list-item">
@@ -70,6 +77,25 @@
            </p>
        </div>
    </div>
-
+   <script>
+       $.ajax({
+            url: '/list',
+            dataType:'json'
+            }).done(function(data, status, xhr){
+            console.log(
+            JSON.stringify(data, null, 4)
+            )    
+        });
+            // Ajax.request({
+            //     url: '/list',
+            //     method:"GET",
+            //     success:function(xhr){
+            //         console.log(xhr);
+            //     },
+            //     failure:function(xhr){
+            //         console.log(xhr+"error");
+            //     }
+            // });
+   </script>
 </body>
 </html>
