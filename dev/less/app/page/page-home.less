@@ -28,7 +28,21 @@
         color: #fff;
         .rem(font-size,22);
         .rem(padding,0,30);
-        span{.rem(margin-left,10);}
+        position: relative;
+        span{
+            .rem(margin-left,30); 
+            display: block;
+            .rem(height,50);
+            .rem(line-height,50);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        marquee{
+            .rem(margin-left,150); 
+            .rem(margin-right,30); 
+        }
     }
     .menu{
         display:flex;
@@ -110,7 +124,7 @@
         }
     }
     .hot{
-        .rem(margin,60,30,30);
+        .rem(margin,30);
         .rem(height,60);
         .rem(line-height,60);
 

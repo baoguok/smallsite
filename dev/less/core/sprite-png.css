@@ -88,8 +88,8 @@
 
 	.hover (@a) when (@a = false) {
 		.iconSprite();
-		.rem(width, 20);
-		.rem(height, 20);
+		.rem(width, 21);
+		.rem(height, 21);
 	}
 	.hover(@isHover);
 	
@@ -102,8 +102,8 @@
 }
 .icon-notice{
 	.rem(background-position, -208, -58);
-	.rem(width, 20);
-	.rem(height, 20);
+	.rem(width, 21);
+	.rem(height, 21);
 }
 
 

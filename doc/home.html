@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="zh-lang">
 <head>
     <meta charset="utf-8">
@@ -20,8 +20,8 @@
         </a>
     </div>
     <div class="notice">
-        <i class="icon-notice"></i>
-        <span>景区公告：截止目前为止，景区在园人数为50000人。</span>
+        <span> <i class="icon-notice"></i> 景区公告：</span>
+        <marquee direction="left" behavior="scroll" id="textMarquee" scrollamount="3">截止目前为止，景区在园人数为50000人。请自行疏散人员哦，安全为重。</marquee>
     </div>
     <!-- Swiper -->
     <div class="swiper-container">
@@ -117,6 +117,10 @@
             pagination: '.swiper-pagination',
             paginationClickable: true
         });
+        window.onload = function(){
+            var marqueeObj = document.getElementById('textMarquee');
+            marqueeObj.start();
+        }
     </script>
 </body>
 </html>
