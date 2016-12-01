@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-lang">
 <head>
     <meta charset="utf-8">
@@ -9,93 +9,136 @@
     <script src="/smallsite/dest/js/all.js"></script>
     <script src="/smallsite/dest/js/swiper.min.js"></script>
 
-    <script src="/smallsite/dest/js/jquery.min.js"></script>
-
     <!-- （必选）加载 Mock -->
-    <script src="http://mockjs.com/dist/mock.js"></script>
+    <!-- 测试阶段 -->
+    <script src="/smallsite/data/mock.js"></script>
     <script src="/smallsite/data/mockData.js"></script>
 
 </head>
 <body class="page-list">
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光2</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光日光岩日光</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <div class="list-item">
-        <a href="#" class="item-img"><img src="/smallsite/dest/img/main.jpg" width="100%" height="100%"></a>
-       <div class="item-msg">
-           <h2><a href="">日光岩日光</a></h2>
-           <p>
-               <span>2016-10-24</span>
-               <span><i class="icon-view"></i>&nbsp;5,485</span>
-           </p>
-       </div>
-   </div>
-   <script>
-       $.ajax({
-            url: '/list',
-            dataType:'json'
-            }).done(function(data, status, xhr){
-            console.log(
-            JSON.stringify(data, null, 4)
-            )    
-        });
-            // Ajax.request({
-            //     url: '/list',
-            //     method:"GET",
-            //     success:function(xhr){
-            //         console.log(xhr);
-            //     },
-            //     failure:function(xhr){
-            //         console.log(xhr+"error");
-            //     }
-            // });
+
+    <div id="isios" class="isios">
+        <!-- 我是安卓哦 -->
+        <a href="javascrpt:;"><i class="icon-arrow"></i>&nbsp;返回</a>
+        <a href="javascrpt:;">关闭</a>
+    </div>
+    <div id="item">
+        <!-- item -->
+    </div>
+
+    <div class="all" id="touchLoad" style="display:none;">拼命加载中</div>
+
+    <script type="text/html" id="itemTpl">
+        {{each result as item}}
+        <div class="list-item">
+            <a href="{{item.url}}" class="item-img"><img src="{{item.imgurl}}" width="100%" height="100%"></a>
+            <div class="item-msg">
+               <h2><a href="{{item.url}}">{{item.title}}</a></h2>
+               <p>
+                   <span>{{item.date}}</span>
+                   <span><i class="icon-view"></i>&nbsp;{{item.count}}</span>
+               </p>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script>
+
+        var item        =   document.getElementById('item'),
+            touchLoad   =   document.getElementById('touchLoad'),
+            page        =   1,
+
+            append      =   function(el, html){
+                                var divTemp  = document.createElement("div"),
+                                    nodes    = null,
+                                    fragment = document.createDocumentFragment();
+
+                                divTemp.innerHTML = html;
+                                nodes = divTemp.childNodes;
+                                
+                                for (var i=0, length=nodes.length; i<length; i+=1) {
+                                   fragment.appendChild(nodes[i].cloneNode(true));
+                                }
+                                
+                                el.appendChild(fragment, el.firstChild);
+                                
+                                nodes    = null;
+                                fragment = null;
+                                return el;
+                            },
+
+            getAjax     =   function(fn){
+                                var isStop = false;
+                                if(isStop) {
+                                    touchLoad.innerHTML = "亲爱的，暂无其他数据！";
+                                    setTimeout(function(){
+                                        touchLoad.style.display = 'none';
+                                    }, 800);
+                                    return;
+                                }
+
+                                Ajax.request("/list", {
+                                    method: "get",
+                                    // data:{
+                                    //     page        :    page++,
+                                    //     pageSize    :    5     // 默认服务端设置10条,非必须
+                                    // },
+                                    success:function(xhr){
+                                        var data = JSON.parse(xhr.responseText),
+                                            html = template("itemTpl", data);
+
+                                            // console.log(data);
+
+                                        append(item, html);
+
+                                        
+                                        if( data.result.length == 0){
+                                            isStop = true;
+                                        } 
+
+                                        if(fn){
+                                            fn();
+                                        }
+
+                                    },
+                                    failure:function(){
+                                        // 
+                                    },
+                                    before:function(xhr){
+                                        // 
+                                    }
+                                });
+                            }
+
+        window.onload = function(){
+
+            getAjax(); // 获取AJAX请求，渲染数据 page = 1
+
+            touchLoad.addEventListener('touchend', function(){
+                getAjax();
+            }, false);
+                
+            window.addEventListener('touchend', function(e){
+                var windowScrollBottom = document.body.clientHeight - (window.innerHeight + document.body.scrollTop);
+
+                // console.log( windowScrollBottom, !windowScrollBottom );
+                if( windowScrollBottom <= 0 ){
+
+                    touchLoad.style.display = 'block';
+                    setTimeout(function(){
+                        getAjax(function(){
+                            touchLoad.style.display = 'none';
+                            // console.log('touchmove');
+                        });
+                    }, 800);
+                }
+                
+            }, false);
+
+            displayMess(); // 安卓显示返回模块
+        }
+    
    </script>
 </body>
 </html>

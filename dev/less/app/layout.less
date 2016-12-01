@@ -7,7 +7,7 @@ button[disabled], html input[disabled] {cursor:default}
 a{
 	color:#333;
 	&:hover{
-		color:#f60
+		color:#999;
 	}
 }
 
@@ -19,10 +19,30 @@ a{
 /* 判断是不是IOS */ 
 .isios{
     display: none;
-    text-align: center;
-    .rem(font-size,20);
-    .rem(padding,10,0);
-    color: #ccc;
+
+    .rem(height,90);
+    .rem(line-height,90);
+    .rem(padding,0,30);
+    .rem(font-size,32);
+    color: #333;
+    background-color: #eaeaea;
+    a{
+        display: inline-block;
+        .rem(height,90);
+        .rem(line-height,90);
+        .rem(padding,0,10);
+        position: relative;
+        &:first-child{
+            .rem(padding-left,30);
+        }
+
+    }
+    i[class*=icon]{
+        position: absolute;
+        .rem(top,21);
+        left: 0;
+    }
+
 }
 
 /* 加载更多内容 */

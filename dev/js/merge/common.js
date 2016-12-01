@@ -1,14 +1,9 @@
-window.onload = function(){
-    // 判断设备,抽奖奖品与Apple Inc.无关
-    var isIOS       =    navigator.userAgent.match('iPad')|| navigator.userAgent.match('iPhone')|| navigator.userAgent.match('iPod') ,
-        displayMess =    function(){
+// 判断是否为IOS
+var isIOS       =    navigator.userAgent.match('iPad')|| navigator.userAgent.match('iPhone')|| navigator.userAgent.match('iPod') ,
+    displayMess =    function(){
 
-            if(isIOS && document.getElementById('isios')){
-                document.getElementById('isios').style.display = "block";
-            }
-            
-        };
-
-    displayMess();
-    // test
-};
+        if(!isIOS && document.getElementById('isios')){
+            document.getElementById('isios').style.display = "block";
+        }
+        
+    };
